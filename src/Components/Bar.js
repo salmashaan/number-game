@@ -1,37 +1,39 @@
 import React from "react";
 import { useState } from "react";
 
-let randomNumber = Math.round(Math.random() * 10);
-
-function Bar() {
-  const [value, setValue] = useState("");
-  const onChange = (e) => setValue(e.target.value);
+function Bar({ randomNumber }) {
+  const [guess, setGuess] = useState(0);
+  const [result, setResult] = useState("");
   let results = "";
 
-  const onClick = () => {
-    const userGuess = value;
-
-    if (userGuess === randomNumber) {
-      return <p className="success">Correct!</p>;
-    } else if (userGuess > randomNumber) {
-      return <p className="high">Too high, guess again</p>;
-    } else if (userGuess < randomNumber && userGuess !== "") {
-      return <p className="low">Too low, guess again</p>;
+  const guessButton = () => {
+    if (+guess === randomNumber) {
+      setResult(<p className="success">Correct!</p>);
+    } else if (guess > randomNumber) {
+      setResult(<p className="high">Too high, guess again</p>);
+    } else if (guess < randomNumber && guess !== "") {
+      setResult(<p className="low">Too low, guess again</p>);
     } else {
-      return "";
+      setResult("");
     }
+    console.log(results);
   };
 
-  results = onClick(value);
   return (
     <div>
-      <input value={value} type="number" onChange={onChange} />
-      <button onClick={onClick} type="submit">
-        GUESS
-      </button>
-      {results}
+      {randomNumber}
+      <input
+        type="number"
+        onChange={(e) => {
+          setGuess(e.target.value);
+        }}
+      />
+      <button onClick={guessButton}>GUESS</button>
+      {result}
+      {console.log(guess)}
     </div>
   );
 }
 
+// <p> {randomNumber} </p> //
 export default Bar;
