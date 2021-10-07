@@ -19,7 +19,7 @@ function Head() {
       <br />
       <p>
         {" "}
-        All you have you do it guess the correct height, between 0 and 10, to
+        All you have you do it guess the correct height, between 1 and 10, to
         reach the target. <br /> <br />
         That's it! Come on, start JUMPING!
       </p>

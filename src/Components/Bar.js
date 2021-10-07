@@ -4,15 +4,10 @@ import { useState } from "react";
 function Bar({ randomNumber }) {
   const [guess, setGuess] = useState(0);
   const [result, setResult] = useState("");
+  const [attempts, setAttempts] = useState(5);
+
   let results = "";
-  let guesses = [];
-  let previousGuess = 0;
-
-  const updatePreviousGuess = function () {
-    previousGuess = guesses[guesses.length - 1];
-  };
-
-  //   const resetInput = () => {};
+  let attempt = 5;
 
   const guessButton = () => {
     if (+guess === randomNumber) {
@@ -35,6 +30,11 @@ function Bar({ randomNumber }) {
     document.location.reload();
   }
 
+  function getAttempts() {
+    setAttempts(attempt - 1);
+    console.log(attempt);
+  }
+
   return (
     <div>
       <input
@@ -51,9 +51,14 @@ function Bar({ randomNumber }) {
       <br />
       <button onClick={playAgain}>RESTART</button>
       {console.log(guess)}
+      <br />
+      <br />
+      <p> Jumps Remaining: {attempts} </p>
     </div>
   );
 }
 
 // <p> {randomNumber} </p> // {randomNumber}
 export default Bar;
+
+// what i need to do: figure out how to get attempts when onclick
