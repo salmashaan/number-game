@@ -10,23 +10,26 @@ function Bar({ randomNumber }) {
   //   let attempt = 5;
 
   const guessButton = () => {
-    if (+guess === randomNumber) {
-      setResult(
-        <p className="correct fade-in">Landed on target, well done!!</p>
-      );
-      setAttempts(attempts - 1);
-    } else if (guess > randomNumber) {
-      setResult(<p className="comment fade-in">Ow, you bumped your head!</p>);
-      setAttempts(attempts - 1);
-    } else if (guess < randomNumber && guess !== "") {
-      setResult(
-        <p className="comment fade-in">Not even close, jump a bit higher..</p>
-      );
-      setAttempts(attempts - 1);
-    } else {
-      setResult("");
+    if (attempts !== 0) {
+      if (+guess === randomNumber) {
+        setResult(
+          <p className="correct fade-in">Landed on target, well done!!</p>
+        );
+      } else if (guess > randomNumber) {
+        setResult(<p className="comment fade-in">Ow, you bumped your head!</p>);
+        setAttempts(attempts - 1);
+      } else if (guess < randomNumber && guess !== "") {
+        setResult(
+          <p className="comment fade-in">Not even close, jump a bit higher..</p>
+        );
+        setAttempts(attempts - 1);
+      } else {
+        setResult("");
+      }
+      console.log(results);
+    } else if (attempts === 0) {
+      setResult(<p className="comment fade-in">GAME OVER</p>);
     }
-    console.log(results);
   };
 
   function playAgain() {
