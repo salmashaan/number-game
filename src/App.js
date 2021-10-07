@@ -6,7 +6,7 @@ import Bar from "./Components/Bar";
 // import Attempts from "./Components/Attempts";
 
 function App() {
-  let randomNumber = Math.round(Math.random() * 10 + 1);
+  let randomNumber = Math.round(Math.random() * 10);
 
   return (
     <div className="App">
