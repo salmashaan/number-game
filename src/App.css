@@ -1,9 +1,96 @@
-.App {
+body {
   text-align: center;
-  background-color: lightgray;
+  background: url("https://static.vecteezy.com/system/resources/thumbnails/001/736/138/small/abstract-dark-blue-blurred-background-with-smoke-vector.jpg")
+    no-repeat center center fixed;
+  background-size: cover;
+  color: white;
 }
 
 .game-logo {
-  height: 10vmin;
+  height: 15vmin;
   pointer-events: none;
+}
+
+h1 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 40px;
+  font-family: monospace;
+  color: #fff;
+  text-shadow: 0.5px 0.5px 5px rgb(189, 192, 216), 1px 1px 10px #ccc;
+  text-align: center;
+}
+
+.h1-2 {
+  font-size: 30px;
+  font-family: monospace;
+  color: #fff;
+  text-shadow: 0.5px 0.5px 5px rgb(189, 192, 216), 1px 1px 10px #ccc;
+  text-align: center;
+}
+
+.rule {
+  text-align: center;
+  height: 10%;
+}
+
+p {
+  font-family: monospace;
+  font-size: 16px;
+}
+
+button {
+  text-align: center;
+  margin: 10px 0;
+  width: 16%;
+  margin: 0 auto;
+  border-radius: 10%;
+  cursor: pointer;
+  border: none;
+  font-family: monospace;
+  font-size: 14px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    0px 0px 12px 8px rgba(91, 91, 91, 0.13);
+  box-shadow: 0px 10px 13px -7px #000000,
+    0px 0px 12px 8px rgba(91, 91, 91, 0.13);
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: rgb(19, 23, 58);
+  color: white;
+}
+
+input {
+  width: 15%;
+  border-radius: 10%;
+  outline: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+.comment {
+  font-size: 18px;
+}
+
+.correct {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 1px 1px 10px rgb(189, 192, 216), 1px 1px 10px #ccc;
+  text-align: center;
+}
+
+.fade-in {
+  animation: fadeIn 1s;
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
